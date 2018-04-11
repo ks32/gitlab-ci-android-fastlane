@@ -41,7 +41,7 @@ RUN mkdir -p $HOME/.android && touch $HOME/.android/repositories.cfg
 RUN ${ANDROID_HOME}/tools/bin/sdkmanager "tools" "platforms;android-${VERSION_TARGET_SDK}" "build-tools;${VERSION_BUILD_TOOLS}"
 RUN ${ANDROID_HOME}/tools/bin/sdkmanager "extras;android;m2repository" "extras;google;google_play_services" "extras;google;m2repository"
 
-RUN bundle install fastlane -NV
+RUN bundle install fastlane 
 RUN bundle 'fastlane-plugin-increment_version_code'
 
 ADD id_rsa $HOME/.ssh/id_rsa
