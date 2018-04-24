@@ -1,3 +1,5 @@
+fastlane version bump
+
 # gitlab-ci-android-fastlane
 This Docker image contains the Android SDK and most common packages necessary for building Android apps in a CI tool like GitLab CI (Android SDK, git, fastlane). Make sure your CI environment's caching works as expected, this greatly improves the build time, especially if you use multiple build jobs.
 
