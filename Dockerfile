@@ -12,6 +12,8 @@ ENV VERSION_BUILD_TOOLS "27.0.3"
 ENV VERSION_TARGET_SDK "27"
 
 ENV ANDROID_HOME "/sdk"
+ENV ANDROID_NDK_HOME /ndk
+ENV ANDROID_NDK_VERSION r17b
 
 ENV PATH "$PATH:${ANDROID_HOME}/tools:${ANDROID_HOME}/tools/bin:${ANDROID_HOME}/platform-tools"
 ENV DEBIAN_FRONTEND noninteractive
@@ -40,6 +42,22 @@ RUN yes | ${ANDROID_HOME}/tools/bin/sdkmanager --licenses
 RUN mkdir -p $HOME/.android && touch $HOME/.android/repositories.cfg
 RUN ${ANDROID_HOME}/tools/bin/sdkmanager "tools" "platforms;android-${VERSION_TARGET_SDK}" "build-tools;${VERSION_BUILD_TOOLS}"
 RUN ${ANDROID_HOME}/tools/bin/sdkmanager "extras;android;m2repository" "extras;google;google_play_services" "extras;google;m2repository"
+
+RUN mkdir /android-ndk-tmp && \
+    cd /android-ndk-tmp && \
+    wget -q https://dl.google.com/android/repository/android-ndk-${ANDROID_NDK_VERSION}-linux-x86_64.zip && \
+# uncompress
+    unzip -q android-ndk-${ANDROID_NDK_VERSION}-linux-x86_64.zip && \
+# move to its final location
+    mv ./android-ndk-${ANDROID_NDK_VERSION} ${ANDROID_NDK_HOME} && \
+# remove temp dir
+    cd ${ANDROID_NDK_HOME} && \
+    rm -rf /android-ndk-tmp
+
+# add to PATH
+ENV PATH ${PATH}:${ANDROID_NDK_HOME}
+
+
 
 RUN gem install -n ${ANDROID_HOME}/tools/bin fastlane
 
