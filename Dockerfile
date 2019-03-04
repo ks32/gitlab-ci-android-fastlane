@@ -38,7 +38,7 @@ RUN unzip /tools.zip -d /sdk && rm -rf /tools.zip
 RUN yes | ${ANDROID_HOME}/tools/bin/sdkmanager --licenses
 
 RUN mkdir -p $HOME/.android && touch $HOME/.android/repositories.cfg
-RUN ${ANDROID_HOME}/tools/bin/sdkmanager "tools" "ndk-bundle" "platforms;android-${VERSION_TARGET_SDK}" "build-tools;${VERSION_BUILD_TOOLS}"
+RUN ${ANDROID_HOME}/tools/bin/sdkmanager "tools" "platforms;android-${VERSION_TARGET_SDK}" "build-tools;${VERSION_BUILD_TOOLS}"
 RUN ${ANDROID_HOME}/tools/bin/sdkmanager "extras;android;m2repository" "extras;google;google_play_services" "extras;google;m2repository"
 
 
