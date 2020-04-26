@@ -1,7 +1,6 @@
 FROM phusion/baseimage:0.10.0
 LABEL maintainer="United Classifieds <unitedclassifiedsapps@gmail.com>"
 CMD ["/sbin/my_init"]
-
 ENV LC_ALL "en_US.UTF-8"
 ENV LANGUAGE "en_US.UTF-8"
 ENV LANG "en_US.UTF-8"
