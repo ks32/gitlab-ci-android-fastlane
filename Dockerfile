@@ -42,8 +42,6 @@ RUN mkdir -p $HOME/.android && touch $HOME/.android/repositories.cfg
 RUN ${ANDROID_HOME}/tools/bin/sdkmanager "tools" "platforms;android-${VERSION_TARGET_SDK}" "build-tools;${VERSION_BUILD_TOOLS}"
 RUN ${ANDROID_HOME}/tools/bin/sdkmanager "extras;android;m2repository" "extras;google;google_play_services" "extras;google;m2repository"
 
-
-
 RUN gem install -n ${ANDROID_HOME}/tools/bin fastlane
 
 ADD id_rsa $HOME/.ssh/id_rsa
