@@ -27,8 +27,7 @@ RUN apt-get -y install --no-install-recommends \
     unzip \
     zip \
     git \
-    ruby2.4 \
-    ruby2.4-dev \
+    ruby-full \
     build-essential \
     file \
     ssh
@@ -42,7 +41,9 @@ RUN mkdir -p $HOME/.android && touch $HOME/.android/repositories.cfg
 RUN ${ANDROID_HOME}/tools/bin/sdkmanager "tools" "platforms;android-${VERSION_TARGET_SDK}" "build-tools;${VERSION_BUILD_TOOLS}"
 RUN ${ANDROID_HOME}/tools/bin/sdkmanager "extras;android;m2repository" "extras;google;google_play_services" "extras;google;m2repository"
 
-RUN gem install -n ${ANDROID_HOME}/tools/bin fastlane
+#RUN gem install -n ${ANDROID_HOME}/tools/bin fastlane
+RUN gem install fastlane -NV \
+  && gem install fastlane-plugin-increment_version_code
 
 ADD id_rsa $HOME/.ssh/id_rsa
 ADD id_rsa.pub $HOME/.ssh/id_rsa.pub
