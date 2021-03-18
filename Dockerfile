@@ -1,13 +1,9 @@
 FROM phusion/baseimage:0.10.0
-LABEL maintainer="United Classifieds <unitedclassifiedsapps@gmail.com>"
+MAINTAINER Asif Hisam <asif@noemail.com>
 CMD ["/sbin/my_init"]
 ENV LC_ALL "en_US.UTF-8"
 ENV LANGUAGE "en_US.UTF-8"
 ENV LANG "en_US.UTF-8"
-letssss
-#ENV VERSION_SDK_TOOLS "4333796"
-#ENV VERSION_BUILD_TOOLS "28.0.3"
-#ENV VERSION_TARGET_SDK "28"
 ENV VERSION_SDK_TOOLS "6514223"
 ENV VERSION_BUILD_TOOLS "29.0.2"
 ENV VERSION_TARGET_SDK "29"
