@@ -22,6 +22,8 @@ RUN apt-get -qq update \
       lib32ncurses6 \
       lib32z1 \
       ruby-full \
+      build-essential \
+      file \
       unzip \
       locales \
  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
