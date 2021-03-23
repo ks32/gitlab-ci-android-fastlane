@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM ubuntu:18.04
 MAINTAINER ks32 <asif@donotemail.com>
 
 ENV VERSION_TOOLS "6858069"
