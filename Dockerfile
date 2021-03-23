@@ -19,7 +19,7 @@ RUN apt-get -qq update \
       libc6-i386 \
       lib32stdc++6 \
       lib32gcc1 \
-      lib32ncurses6 \
+      lib32ncurses5 \
       lib32z1 \
       ruby-full \
       build-essential \
