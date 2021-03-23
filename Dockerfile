@@ -22,6 +22,7 @@ RUN apt-get -qq update \
       lib32ncurses5 \
       lib32z1 \
       ruby-full \
+      ruby-dev \
       build-essential \
       file \
       unzip \
