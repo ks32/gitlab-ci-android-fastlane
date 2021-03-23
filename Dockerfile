@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 MAINTAINER ks32 <asif@donotemail.com>
 
 ENV VERSION_TOOLS "6858069"
@@ -15,14 +15,13 @@ RUN apt-get -qq update \
       curl \
       git-core \
       html2text \
-      openjdk-11-jdk \
+      openjdk-8-jdk \
       libc6-i386 \
       lib32stdc++6 \
       lib32gcc1 \
-      lib32ncurses5 \
+      lib32ncurses6 \
       lib32z1 \
       ruby-full \
-      ruby-dev \
       build-essential \
       file \
       unzip \
