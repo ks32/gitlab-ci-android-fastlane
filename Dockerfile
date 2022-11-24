@@ -1,7 +1,7 @@
 FROM ubuntu:20.04
 MAINTAINER ks32 <asif@donotemail.com>
 
-ENV VERSION_TOOLS "8512546"
+ENV VERSION_TOOLS "7583922"
 
 ENV ANDROID_SDK_ROOT "/sdk"
 # Keep alias for compatibility
