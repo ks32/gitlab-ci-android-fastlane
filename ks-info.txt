@@ -1,0 +1,5 @@
+12172612 change to 12172612 on Nov-25-2024
+https://mirrors.cloud.tencent.com/AndroidSDK/
+
+build command
+docker build . -t ks32/gitlab-ci-android-fastlane:latest

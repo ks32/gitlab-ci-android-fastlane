@@ -1,7 +1,7 @@
 FROM ubuntu:20.04
 MAINTAINER ks32 <asif@donotemail.com>
 
-ENV VERSION_TOOLS "12172612"
+ENV VERSION_TOOLS "9644228"
 
 ENV ANDROID_SDK_ROOT "/sdk"
 # Keep alias for compatibility
@@ -50,11 +50,10 @@ RUN mkdir -p /root/.android \
  && touch /root/.android/repositories.cfg \
  && sdkmanager --update
 
-#ADD packages.txt /sdk
-#RUN sdkmanager --package_file=/sdk/packages.txt
+ADD packages.txt /sdk
+RUN sdkmanager --package_file=/sdk/packages.txt
 
-RUN gem install bundler -v 2.4.22
-RUN gem install public_suffix -v 5.1.1
+
 RUN gem install fastlane -NV \
   && gem install fastlane-plugin-increment_version_code
 
